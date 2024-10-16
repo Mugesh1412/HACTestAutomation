@@ -71,7 +71,7 @@ public class HAC627VerifyNewAccountBillingAddress extends BaseTest {
 	@Then("HAC627New Compare the shipping Address and billing Address on the account record")
 	public void HAC627new_compare_the_shipping_address_and_billing_address_on_the_account_record() throws InterruptedException {
 		HomePage HomePage = new HomePage(driver);
-		boolean result = HomePage.compareShippingAddressAndBillingAddressOnTheAccount();
+		boolean result = HomePage.verifyBillingAddressOnTheAccount();
 		if (result==true) {
 			assertTrue(true);
 		} else {

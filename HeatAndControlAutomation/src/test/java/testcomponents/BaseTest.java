@@ -74,7 +74,7 @@ public class BaseTest {
 				Thread.sleep(2000);
 				js = (JavascriptExecutor) driver;
 				js.executeScript("var elements = document.evaluate(\"//div[contains(@class,'tabsetHeader')]//button[starts-with(@title,'Close')]//lightning-primitive-icon\", document.body, null, XPathResult.ANY_TYPE, null); while(element = elements.iterateNext()){  element.click(); }");
-				Thread.sleep(2000);
+				//Thread.sleep(2000);
 				return js;
 	}
 	
@@ -85,7 +85,7 @@ public class BaseTest {
 				Thread.sleep(2000);
 				js = (JavascriptExecutor) driver;
 				js.executeScript("var node=document.evaluate(\"//div[contains(@class,'oneUtilityBar slds-utility-bar_container oneUtilityBarContent')]\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null ).singleNodeValue; node.parentNode.removeChild(node);");
-				 Thread.sleep(2000);
+				// Thread.sleep(2000);
 				return js;
 	}
 
@@ -122,7 +122,7 @@ public class BaseTest {
 	{
 		driver.quit();
 		return driver;      
-         	    	     
-	}    
+         	    	        
+	}      
   }     
   
