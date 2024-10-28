@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import PageObjects.CreateNewAccount;
 import PageObjects.HomePage;
 import PageObjects.Login;
 import PageObjects.SelectApplication;
@@ -51,23 +50,24 @@ public class HAC627VerifyNewAccountBillingAddress extends BaseTest {
 		HomePage.ClickcOnAccountTab();
 
 	}
-
 	
-
+	
+	
 	@When("HAC627New User should click on the new button and enter the necessary details to create a new account- Use Below Cretancials")
 	public void HAC627new_user_should_enter_the_necessary_details_to_create_a_new_account_use_below_cretancials(DataTable dataTable) throws InterruptedException {
 		List<Map<String, String>> value = dataTable.asMaps(String.class,String.class);
 		String AccountName = value.get(0).get("Account Name");
 		String industryvalue = value.get(0).get("Industry");
+		String RegionalSetting = value.get(0).get("Regional Setting");
 		String Address = value.get(0).get("Shipping Address");
 		HomePage HomePage = new HomePage(driver);
 		
-		HomePage.createNewCustomerAccount(AccountName, industryvalue, Address);
-
-
+		HomePage.createNewCustomerAccount(AccountName, industryvalue, Address, RegionalSetting);
+		
+		
 	}
-
-
+	
+	
 	@Then("HAC627New Compare the shipping Address and billing Address on the account record")
 	public void HAC627new_compare_the_shipping_address_and_billing_address_on_the_account_record() throws InterruptedException {
 		HomePage HomePage = new HomePage(driver);

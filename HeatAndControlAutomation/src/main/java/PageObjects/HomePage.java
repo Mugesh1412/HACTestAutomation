@@ -98,7 +98,7 @@ public class HomePage extends ReusableUtility {
 		Thread.sleep(2000);
 	}
 
-	public void createNewCustomerAccount(String Accountname, String Industry, String Address)
+	public void createNewCustomerAccount(String Accountname, String Industry, String Address, String RegionalSetting)
 			throws InterruptedException {
 
 		Thread.sleep(2000);
@@ -109,20 +109,31 @@ public class HomePage extends ReusableUtility {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[text()='Account Name']/..//div")).sendKeys(Accountname);
 		// AccountnameInput.sendKeys(Accountname);
-		WebElement industryWebelement = driver
-				.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='" + Industry + "']"));
+		WebElement industryWebelement = driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='" + Industry + "']"));
 		javaScriptClick(industryWebelement);
 		WebElement MoveSelectionToChosenButton = driver.findElement(By.xpath("(//button[@title='Move to Chosen'])[1]"));
 		javaScriptClick(MoveSelectionToChosenButton);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//legend[text()='Shipping Address']/..//input)[1]")).sendKeys(Address);
-		driver.findElement(By.xpath("//lightning-base-combobox-formatted-text")).click();
+		
+		driver.findElement(By.xpath("//label[text()='Regional Settings']/..//input")).click();
+		driver.findElement(By.xpath("//span[@title='"+ RegionalSetting +"']")).click();
+		//Thread.sleep(4000);
+		//driver.findElement(By.xpath("(//legend[text()='Shipping Address']/..//input)[1]")).sendKeys(Address);
+		//driver.findElement(By.xpath("//lightning-base-combobox-formatted-text")).click();
 		// AddressSearchButton.sendKeys(Address);
 		// selectAddress.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//ul[@class='slds-button-group-row']//li[3]")).click();
 		// SaveButton.click();
 
+	}
+	
+	
+	public String verifyRegionalSettingRecordValue() throws InterruptedException {
+		Thread.sleep(10000);
+		scroolByPixelValue(0, 200);
+		Thread.sleep(1000);
+		String regionalValue = driver.findElement(By.xpath("//dt[contains(.,'Regional Settings')]/..//dd")).getText();
+		return regionalValue;
 	}
 
 	public boolean verifyBillingAddressOnTheAccount() throws InterruptedException {
@@ -146,33 +157,30 @@ public class HomePage extends ReusableUtility {
 	public void VerifyAbilityToSelectMultipleIndustriesValueOnTheAccount(String Accountname, String Industry1,String Industry2) throws InterruptedException, AWTException {
 
 
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[text()='New']")).click();
-		driver.findElement(By.xpath("//span[text()='Next']")).click();
-		//NewButton.click(); 
-		//NextButton.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//label[text()='Account Name']/..//div")).sendKeys(Accountname); 
-		//AccountnameInput.sendKeys(Accountname);
-		Thread.sleep(5000); 
-		Robot robot = new Robot();
-		WebElement industryWebelement = driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"+Industry1 +"']")); 
-		Thread.sleep(5000);
-		robot.keyPress(KeyEvent.VK_SHIFT);
-		javaScriptClick(industryWebelement);
-		robot.keyRelease(KeyEvent.VK_SHIFT); 
-		WebElement industryWebelement2 = driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"+Industry2 +"']")); 
-		Thread.sleep(5000);
-		robot.keyPress(KeyEvent.VK_SHIFT);
-		javaScriptClick(industryWebelement2);
-		robot.keyRelease(KeyEvent.VK_SHIFT); 
-		Thread.sleep(5000); 
-		WebElement MoveSelectionToChosenButton=driver.findElement(By.xpath("(//button[@title='Move to Chosen'])[1]"));
-		javaScriptClick(MoveSelectionToChosenButton); 
-		Thread.sleep(2000);
-
+		
+		  Thread.sleep(2000); 
+		  driver.findElement(By.xpath("//div[text()='New']")).click(); 
+		  driver.findElement(By.xpath("//span[text()='Next']")).click(); 
+		  //NewButton.click();// NextButton.click(); 
+		  Thread.sleep(2000); 
+		  driver.findElement(By.xpath("//label[text()='Account Name']/..//div")). sendKeys(Accountname); 
+		  //AccountnameInput.sendKeys(Accountname); 
+		  Robot robot= new Robot(); 
+		  WebElement industryWebelement = driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"+ Industry1 +"']")); 
+		  WebElement industryWebelement2 =driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"+Industry2 +"']")); 
+		  WebElement MoveSelectionToChosenButton=driver.findElement(By.xpath("(//button[@title='Move to Chosen'])[1]")); 
+		  Thread.sleep(1000); 
+		  javaScriptClick(industryWebelement); 
+		  robot.keyPress(KeyEvent.VK_CONTROL);
+		  javaScriptClick(industryWebelement2); 
+		  robot.keyRelease(KeyEvent.VK_CONTROL); 
+		  Thread.sleep(5000); 
+		  javaScriptClick(MoveSelectionToChosenButton); 
+		  Thread.sleep(2000);
+		 
 		//driver.findElement(By.xpath("//ul[@class='slds-button-group-row']//li[3]")).click();
 		//SaveButton.click();
+
 
 
 		/*
@@ -187,28 +195,25 @@ public class HomePage extends ReusableUtility {
 		 * // Initialize Actions class for multiple selection Actions actions = new
 		 * Actions(driver);
 		 * 
-		 * // First industry element WebElement industryWebElement1 =
-		 * driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"
-		 * + Industry1 + "']")); actions.click(industryWebElement1).perform();
-		 * Thread.sleep(3000);
+		 * // First industry element WebElement industryWebElement1 = WebElement
+		 * industryWebElement1=driver.findElement(By.xpath(
+		 * "//div[text()='Industry']/..//li//span[text()='"+ Industry1 + "']"));
+		 * actions.click(industryWebElement1).perform(); Thread.sleep(3000);
 		 * 
-		 * // Press CTRL key and select the second industry WebElement
+		 * // Press CTRL key and select the second industry WebElement WebElement
 		 * industryWebElement2 =
-		 * driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"
-		 * + Industry2 + "']"));
+		 * driver.findElement(By.xpath("//div[text()='Industry']/..//li//span[text()='"+
+		 * Industry2 + "']"));
 		 * actions.keyDown(Keys.CONTROL).click(industryWebElement2).keyUp(Keys.CONTROL).
 		 * perform(); // Hold CTRL to multi-select Thread.sleep(5000);
 		 * 
 		 * // Click the 'Move to Chosen' button WebElement moveSelectionToChosenButton =
+		 * WebElement moveSelectionToChosenButton =
 		 * driver.findElement(By.xpath("(//button[@title='Move to Chosen'])[1]"));
 		 * javaScriptClick(moveSelectionToChosenButton);
 		 * 
 		 * Thread.sleep(2000);
-		 */      
-		
-		   
-		    
-
-
-	}
-}
+		 */
+                           
+  	}            
+}        

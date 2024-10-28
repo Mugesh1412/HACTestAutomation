@@ -65,7 +65,7 @@ public class HAC387AbilityToSelectMultipleIndustriesOnAccountRecord extends Base
 	@Then("HAC387Multiselect verify the industries value on the account record")
 	public void HAC387multiselect_verify_the_industries_value_on_the_account_record() {
 	 
-	    
-	}
+	                                                                                                                               
+	}      
 
 }

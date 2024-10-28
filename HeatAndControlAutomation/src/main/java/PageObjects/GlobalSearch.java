@@ -26,10 +26,10 @@ public class GlobalSearch extends ReusableUtility{
 		PageFactory.initElements(driver, this);
 	}
 	
-
-	
-	
-public void selectaccountfromglobalsearch() throws InterruptedException
+     
+  	            
+         	
+ public void selectaccountfromglobalsearch() throws InterruptedException
 	{
 		Thread.sleep(2000);
 	//	waitforelementtodisappear = waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));

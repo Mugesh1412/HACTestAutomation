@@ -4,6 +4,8 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.testng.Assert;
+
 import PageObjects.AccountDetailsTab;
 import PageObjects.GlobalSearch;
 import PageObjects.Login;
@@ -61,12 +63,11 @@ public class HAC627VerifyBillingAddress extends BaseTest {
 	    
 		AccountDetailsTab AccountDetailsTab = new AccountDetailsTab(driver);
 		boolean result = AccountDetailsTab.verifybillingAddress();
-		if (result==true) {
-			assertTrue(true);
-		} else {
-			assertTrue(false);
-		}
+		/*
+		 * if (result==true) { assertTrue(true); } else { assertTrue(false); }
+		 */
 		    
+		Assert.assertTrue(result);
 		
 	       
 	}

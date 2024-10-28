@@ -2,7 +2,6 @@ package PageObjects;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,9 +25,9 @@ public class Login extends ReusableUtility{
 	WebElement usernameele;
 	
 	@FindBy(id="password")
-	WebElement passwordele;
+	WebElement passwordele;          
 	
-	@FindBy(id="Login")
+	@FindBy(id="Login")         
 	WebElement Loginele;
 	
 	public void goTo(String URL)
@@ -54,6 +53,5 @@ public class Login extends ReusableUtility{
 		
 	}
 
-
-}
-
+  
+} 
