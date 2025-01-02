@@ -34,6 +34,8 @@ public class CaseDetailsTab extends ReusableUtility {
 		driver.findElement(By.xpath("//span[text()='Edit Status']/..")).click();
 		Thread.sleep(2000);
 	}
+	
+
 
 	public void updateCaseStatusNew() throws InterruptedException {
 		Thread.sleep(0, 2000);
@@ -408,7 +410,7 @@ public class CaseDetailsTab extends ReusableUtility {
 	@FindBy(xpath = "//div[@part='overlay dropdown']//span[text()='Merge Cases']")
 	public WebElement MergeCasesButton;
 	
-	@FindBy(xpath = "//div[@part='overlay dropdown']//span[text()='Printable View']")
+	@FindBy(xpath = "//div[@part='overlay dropdown']//span[text()='Printable View1']")
 	public WebElement PrintableViewButton;
 	
 	

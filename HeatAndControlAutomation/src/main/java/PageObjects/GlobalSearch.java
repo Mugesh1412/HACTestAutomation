@@ -29,7 +29,7 @@ public class GlobalSearch extends ReusableUtility{
      
   	            
          	
- public void selectaccountfromglobalsearch() throws InterruptedException
+ public void selectaccountfromglobalsearch() throws InterruptedException                                                                          
 	{
 		Thread.sleep(2000);
 	//	waitforelementtodisappear = waitForElementToDisAppear(By.xpath("//span[contains(@class,'toastMessage')]//a//div"));
@@ -60,9 +60,9 @@ public void selectcasefromglobalsearch(String tstcase) throws InterruptedExcepti
 	waitforelementtodisappear = waitForElementToAppear(By.xpath("//li//a[text()='Details']"));
 	Thread.sleep(2000);	
 }
-
-
-
-
+  
+                               
+                              
+      
 }
 

@@ -1,71 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-15T19:59:30 IST" name="Default suite" finished-at="2024-10-15T20:00:33 IST" duration-ms="63453">
+  <suite started-at="2025-01-02T21:16:35 IST" name="Default suite" finished-at="2025-01-02T21:17:41 IST" duration-ms="65943">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@408d971b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:DemoRunner.DemoRunner@408d971b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-10-15T19:59:30 IST" name="Default test" finished-at="2024-10-15T20:00:33 IST" duration-ms="63453">
-      <class name="Runner.MyRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.MyRunner@408d971b]" started-at="2024-10-15T19:59:30 IST" name="setUpClass" finished-at="2024-10-15T19:59:31 IST" duration-ms="1071" status="PASS">
+    <test started-at="2025-01-02T21:16:35 IST" name="Default test" finished-at="2025-01-02T21:17:41 IST" duration-ms="65943">
+      <class name="DemoRunner.DemoRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:DemoRunner.DemoRunner@408d971b]" started-at="2025-01-02T21:16:35 IST" name="setUpClass" finished-at="2025-01-02T21:16:37 IST" duration-ms="1855" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@76dc36e5]]>
+                <![CDATA[org.testng.TestRunner@2e85e3f1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.MyRunner@408d971b]" started-at="2024-10-15T19:59:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-15T20:00:31 IST" duration-ms="59968" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:DemoRunner.DemoRunner@408d971b]" started-at="2025-01-02T21:16:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-01-02T21:17:37 IST" duration-ms="60350" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login as Service Scheduler and Verify the new account billing Address"]]>
+                <![CDATA["login With Vaild Credentials"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify the New Account Billing Address"]]>
+                <![CDATA["Salesforce LoginModule2"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to find element with locator By.xpath: //lightning-base-combobox-formatted-text
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //lightning-base-combobox-formatted-text
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at PageObjects.HomePage.createNewCustomerAccount(HomePage.java:112)
-at StepDefinitions.HAC627VerifyNewAccountBillingAddress.HAC627new_user_should_enter_the_necessary_details_to_create_a_new_account_use_below_cretancials(HAC627VerifyNewAccountBillingAddress.java:65)
-at ✽.HAC627New User should click on the new button and enter the necessary details to create a new account- Use Below Cretancials(file:///C:/Users/HP/eclipse-workspace/HeatAndControlAutomation/src/test/java/Features/HAC-627%20VerifyNewAccountBilingAddress.feature:10)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.MyRunner@408d971b]" started-at="2024-10-15T20:00:31 IST" name="tearDownClass" finished-at="2024-10-15T20:00:33 IST" duration-ms="2371" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:DemoRunner.DemoRunner@408d971b]" started-at="2025-01-02T21:17:37 IST" name="tearDownClass" finished-at="2025-01-02T21:17:41 IST" duration-ms="3679" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.MyRunner -->
+      </class> <!-- DemoRunner.DemoRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -14,5 +14,5 @@
 
     Examples: 
       | username                       | password    |
-      | testservicescheduler@gmail.com | M@shaallah1 |
+      | testservicescheduler@gmail.com | H@ctest1 |
    

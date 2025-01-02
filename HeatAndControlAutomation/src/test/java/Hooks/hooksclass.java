@@ -1,27 +1,16 @@
 package Hooks;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import testcomponents.BaseTest;
-
-import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.Properties;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import PageObjects.Login;
 import PageObjects.SelectApplication;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import testcomponents.BaseTest;
 
 public class hooksclass extends BaseTest{
 	Login loginPO;
@@ -47,12 +36,23 @@ public void setUp() throws IOException
  * 
  * @Before(order=4) public void close_all_the_open_tabs() throws
  * InterruptedException { closeAllTabs(); }
- * 
+ *   
  * @Before(order=5) public void close_the_bottom_bar() throws
  * InterruptedException { closeBottomeBar(); }
  */	
-/*
- * @After() public void tearDown() { tearDownDriver(); }
- */
+
+  @After
+  public void tearDown(Scenario sc) {
+	    
+	  if (sc.isFailed()) {
+		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		sc.attach(screenshot, "image/png", sc.getName());
+	}
+	  
+	 
+	//  tearDownDriver(); 
+  }  
+     
+ 
 
 }

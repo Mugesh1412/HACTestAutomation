@@ -2,6 +2,7 @@ package PageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +32,11 @@ public class Login extends ReusableUtility{
 	WebElement Loginele;
 	
 	public void goTo(String URL)
+	
+	
 	{
+		
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	 	driver.navigate().to(URL); 
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

@@ -29,13 +29,13 @@ public class HAC322_384VerifyCasePageLayoutComponents extends BaseTest {
 		SelectApplication selectApplication = new SelectApplication(driver);
 		  selectApplication.selectApp(getParameters().getProperty("APPNAME")); 
 	  
-	}
+	}  
 
 	@When("HAC322 close all the open tabs")
 	public void HAC322_close_all_the_open_tabs() throws InterruptedException {
 	  
-		closeAllTabs(); 
-	}
+		closeAllTabs();   
+	}                
 
 	@When("HAC322 close the bottom bar")
 	public void HAC322_close_the_bottom_bar() throws InterruptedException {

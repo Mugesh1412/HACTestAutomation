@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions
 		(
-		tags="@test", 
+		tags="@mugesh", 
 		features = "src/test/java/Features",
 		glue = {"StepDefinitions","Hooks"},
 		dryRun= !true,
@@ -25,6 +25,6 @@ public class MyRunner extends AbstractTestNGCucumberTests {
 	 * 
 	 * @DataProvider(parallel=true) public Object[][] scenarios() { return
 	 * super.scenarios(); }
-	 */
-
-}
+	 */   
+     
+}      

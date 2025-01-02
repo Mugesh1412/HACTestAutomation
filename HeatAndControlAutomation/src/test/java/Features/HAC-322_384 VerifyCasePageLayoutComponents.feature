@@ -1,5 +1,6 @@
 Feature: Verify the Case Page Layout Components
 
+  @mugesh
   Scenario Outline: Login as Service Users and Verify the Case Page Layout Components
     Given HAC322 user enters "<username>" and "<password>"
     When HAC322 select the applicaton
@@ -13,11 +14,11 @@ Feature: Verify the Case Page Layout Components
     Then HAC322 verify contact name field
     Then HAC322 verify status field
     Then HAC322 verify priority field
-    Then HAC322 verify contact phone field
+    Then HAC322 verify contact phone field                                      
     Then HAC322 verify contact email field
     #Additional Information
     Then HAC322 verify case origin field
-    Then HAC322 verify type field
+    Then HAC322 verify type field                    
     #Description Information
     Then HAC322 verify subject field
     Then HAC322 verify description field
@@ -35,7 +36,7 @@ Feature: Verify the Case Page Layout Components
     #On the Related List Quick Links verify below related list items
     Then HAC322 verify contact roles
     Then HAC322 verify case team
-    Then HAC322 verify case comments      
+    Then HAC322 verify case comments
     Then HAC322 verify work orders
     Then HAC322 verify open activities
     Then HAC322 verify activitiy history
